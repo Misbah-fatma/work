@@ -113,7 +113,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 45px;
 }
 
 .projects h2 {
@@ -122,11 +121,14 @@ body {
   margin-bottom: 10px;
 }
 
+.projects-description{
+  text-align: center;
+}
+
 .projects p {
   font-size: 16px;
   color: #555;
   margin-bottom: 30px;
-  text-align: center;
   width: 100%;
   max-width: 800px;
 }
@@ -157,7 +159,6 @@ body {
   border-radius: 10px;
 } */
  .project-card img {
-  width: 385px;
   height: 256px;
   object-fit: cover;
   border-top-left-radius: 12px;
@@ -186,23 +187,11 @@ body {
 
 .project-card .tags span {
   padding: 6px 12px;
-  background: #f5b300;
-  color: #fff;
+  background: #dcdcdc;
   border-radius: 20px;
   font-size: 12px;
-  font-weight: 600;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-}
 
 /* Recommendation Section */
 .recommendations-section {
@@ -225,100 +214,45 @@ body {
   text-align: center;
 }
 
-/* Carousel Wrapper */
-.carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 327.1px;
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-  background-color: transparent;
-  border: none;
-  font-size: 36px;
-  cursor: pointer;
-  z-index: 2;
-  width: 60px;
-  height: 100%;
-  color: #888;
-  transition: color 0.3s;
-}
-
-.carousel-btn:hover {
-  color: #000;
-}
-
-.carousel-btn.left {
-  position: absolute;
-  left: 0;
-}
-
-.carousel-btn.right {
-  position: absolute;
-  right: 0;
-}
-
-/* Carousel Container */
-.carousel-container {
-  display: flex;
-  gap: 10px;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  width: 100%;
-}
-
-/* Individual Card */
-.recommendations-section {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-}
-
-.carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.carousel-container {
-  display: flex;
-  gap: 20px;
+.carousel {
+  scroll-snap-type: x mandatory;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .recommendation-card {
+  scroll-snap-align: center;
+  width: 340px;
   flex: 0 0 auto;
-  width: 250px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .stars {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #f5b300; /* Yellow color for stars */
-  font-size: 18px;
-}
-
-.highlight {
-  margin-top: 40px;
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
+  letter-spacing: 0.1rem;
 }
 
 .review-text {
-  font-size: 14px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.highlight {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.review-text {
+  font-size: 16px;
   margin: 10px 0;
-  color: #555;
+  color: #4b4b4b;
+  font-weight: 100;
 }
 
 .person-details {
@@ -407,7 +341,6 @@ body {
   padding: 30px;
   border-radius: 8px;
   flex: 1;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form h2,
@@ -440,7 +373,7 @@ body {
   background-color: #ffb400;
   border: none;
   padding: 12px;
-  font-weight: bold;
+
   color: black;
   cursor: pointer;
   width: fit-content;
@@ -456,23 +389,29 @@ body {
 .info-card {
   display: flex;
   gap: 20px;
-  background-color: #f9f9fb;
+
   padding: 20px;
   border-radius: 6px;
   align-items: flex-start;
 }
 
-.icon {
-  background-color: #ffb400;
-  color: white;
-  font-size: 24px;
-  width: 40px;
+.icon-circle {
+  width: 50px;
   height: 40px;
+  background-color: #FFD700; /* Yellow */
+  border: 2px solid #000;    /* Black border */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto 20px auto;
 }
+
+.icon-circle i {
+  color: #000; /* Black icon */
+  font-size: 24px;
+}
+
 
 .info-text p {
   margin: 4px 0;
@@ -483,9 +422,7 @@ body {
  
 .footer {
 width: 1440px;
-height: 620.999267578125px;
 top: 3356px;
-padding-bottom: 20px;
 }
 .belowfooter{
 margin-left: 150px;
@@ -536,7 +473,6 @@ gap: 50px;
 
 }
 .image4{
-  margin-left: 100px;
 width: 158px;
 height: 76px;
 top: 45px;
@@ -576,12 +512,6 @@ text-transform: capitalize;
 }
 .Ratinglin1
 .Ratinglin1
-
-
-
-
-
-
 .ratings{
 width: 177px;
 height: 229.999267578125px;
@@ -600,7 +530,6 @@ height: 39.999267578125px;
 border-radius: 4px;
 }
 .ratings, .links, .portfolio, .connect {
-    width: 125px;
     height: 157px;
     text-align: left;
     gap: 20px;
@@ -635,8 +564,8 @@ gap: 20px;
 }
 .social {
 width: 125px;
-height: 107px;
-gap: 16pxpx;
+height: 200px;
+gap: 30px;
 
 }
 
@@ -647,14 +576,14 @@ height: 25px;
 }
 
 .connect img.instagram {
-    width: 125px;
-height: 25px;
+    width: 120px;
+height: 50px;
 
 }
 
 .connect img.facebook {
-    width: 107px;
-    height: 25px;
+    width: 120px;
+    height: 40px;
 }
 
 .copyright {
@@ -662,12 +591,33 @@ height: 25px;
   font-size: 14px;
   width: 283px;
   height: 56px;
-  padding-top: 16px;
   padding-bottom: 16px;
   gap: 10px;
   display: flex;
   align-items: center;           
   justify-content: center;     
   text-align: center;
+  color: gray;
 }
 
+.address{
+  color: gray;
+}
+
+.address p{
+  line-height: 0%;
+  color: #555;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.address span{
+  font-size: 14px;
+  font-weight: 50;
+}
+
+.contact-form label{
+  font-size: 16px;
+  font-weight: 100;
+  color: #555;
+}
